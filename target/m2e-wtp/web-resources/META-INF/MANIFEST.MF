@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: online-shopping
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: parag
+Built-By: Parag
 Implementation-Vendor-Id: com.onlineshopping
-Build-Jdk: 1.8.0_131
+Build-Jdk: 1.8.0_144
 Implementation-URL: http://projects.spring.io/spring-boot/online-shopp
  ing/
 Created-By: Maven Integration for Eclipse
