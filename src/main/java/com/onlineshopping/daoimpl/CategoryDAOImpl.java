@@ -3,13 +3,21 @@ package com.onlineshopping.daoimpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.onlineshopping.dao.CategoryDAO;
 import com.onlineshopping.dto.Category;
 
 @Repository("categoryDAO")
 public class CategoryDAOImpl implements CategoryDAO {
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	
 	private static List<Category> categories = new ArrayList();
 
 	static {
@@ -56,6 +64,19 @@ public class CategoryDAOImpl implements CategoryDAO {
 				return category;
 		}
 		return null;
+	}
+
+	@Override
+	@Transactional
+	public boolean add(Category category) {
+		try {
+			// add the category to the database table
+			sessionFactory.getCurrentSession().update(category);
+			return true;
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
 	}
 
 }
