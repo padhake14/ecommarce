@@ -11,8 +11,7 @@ import com.onlineshopping.dto.Category;
 @Repository("categoryDAO")
 public class CategoryDAOImpl implements CategoryDAO {
 	private static List<Category> categories = new ArrayList();
-	
-	
+
 	static {
 		Category category = new Category();
 
@@ -42,19 +41,21 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 		categories.add(category);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@Override
 	public List<Category> list() {
 		// TODO Auto-generated method stub
 		return categories;
+	}
+
+	@Override
+	public Category get(int id) {
+		// for loop
+		for (Category category : categories) {
+			if (category.getId() == id)
+				return category;
+		}
+		return null;
 	}
 
 }
