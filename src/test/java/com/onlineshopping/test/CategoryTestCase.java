@@ -29,14 +29,13 @@ public class CategoryTestCase {
 	
 	@Test
 	public void testAddCategory() {
-		category = new Category();
+category = new Category();
 		
-		category.setName("Televison");
-		category.setDescription("This is some description for television");
-		category.setImageURL("CAT_1.png");
+		category.setName("Laptop");
+		category.setDescription("This is some description for laptop!");
+		category.setImageURL("CAT_105.png");
 		
-		assertEquals("Sucessfully added a category inside the table!",true,categoryDAO.add(category));
-		
+		assertEquals("Successfully added a category inside the table!",true,categoryDAO.add(category));
 	}
 	
 }
